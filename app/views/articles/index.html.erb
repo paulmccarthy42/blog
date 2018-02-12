@@ -1,0 +1,25 @@
+<h1>Hello rails!</h1>
+<body>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+      <th>Author</th>
+      <th>Link</th>
+    </tr>
+    <% for article in @articles do %>
+        <tr>
+          <td> <%= article.title %> </td>
+          <td> <%= article.text %> </td>
+          <td> <%= article.author %> </td>
+          <td> <%= link_to 'View', article_path(article) %> </td>
+        </tr>
+    <% end %>
+  </table>
+  <p>
+    <button>
+      <!-- <a href="/articles/new">Add new blogpost</a> -->
+      <%= link_to "Add new blogpost", new_article_path %>
+    </button>
+  </p>
+</body>
